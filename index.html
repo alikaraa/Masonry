@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Masonry Eklentisi</title>
+	<style>
+	.grid-sizer,
+	.grid-item {
+		width: 20%; 
+	}
+	/* 2 columns */
+	.grid-item--width2 { 
+		width: 40%;	
+	}
+		img{
+			width: 100%;
+		}
+	@media screen and (max-width:800px){
+		.grid-sizer,
+		.grid-item {
+			width: 25%; 
+		}
+		/* 2 columns */
+		.grid-item--width2 { 
+			width: 50%;	
+		}
+		}
+	</style>
+</head>
+
+<body>
+<div class="grid">
+  <!-- width of .grid-sizer used for columnWidth -->
+  <div class="grid-sizer"></div>
+  <div class="grid-item"><img src="images/r1.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r2.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r3.jpg" alt=""></div>
+ 
+  <div class="grid-item"><img src="images/r5.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r6.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r7.jpg" alt=""></div>
+	 <div class="grid-item grid-item--width2"><img src="images/r4.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r1.jpg" alt=""></div>
+  <div class="grid-item"><img src="images/r2.jpg" alt=""></div>
+  <div class="grid-item grid-item--width2"></div>
+  ...
+</div>
+	
+	
+	
+	
+<script src="jquery-3.5.1.min.js"></script>
+<script src="masonry.pkgd.min.js"></script>
+	
+	<script>
+	$('.grid').masonry({
+  // set itemSelector so .grid-sizer is not used in layout
+  itemSelector: '.grid-item',
+  // use element for option
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+})
+	</script>
+</body>
+</html>
